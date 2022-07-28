@@ -32,9 +32,12 @@ You will need
 - An Azure subscription
 - Azure Communication Services resource
 ### Getting set up:
+
 1. rename `local.settings.template.json` to `local.settings.json`
 
 The function app reads from local.settings.json NOT local.settings.template.json. Our git.ignore script avoids local.settings.json which reduces the chance of a leaked key in your repo
+
+This is necessary for the Function App to detect your functions
 
 2. 
 ```json
@@ -67,3 +70,19 @@ todo
 ## If you have any additional questions:
 
 Please log any github issues and I can try to get to you when I can.
+
+### if dotnet run is not working:
+
+`npm install -g azure-functions-core-tools@3 --unsafe-perm true`
+
+(In powershell in admin mode)
+`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
+
+Run this command in your function app root directory
+`func start`
+
+- If `func start` is not detecting your functions
+
+you need to create the local.settings.json from the local.settings.template.json 
+(make a copy and then rename)
+The local.settings.json also tells the app that its a dotnet style function app
