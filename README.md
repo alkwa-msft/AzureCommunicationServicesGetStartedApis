@@ -15,7 +15,7 @@ I do not suggest to use this project to
 
 ## Goal:
 - ✅ Have a common backend to help others get started
-- ⬜ Be able to deploy this backend quickly to help others get started
+- ✅ Be able to deploy this backend quickly to help others get started
 - ⬜ Add instructions on how people can secure their backend functionality
 
 ## Wish list:
