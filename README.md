@@ -25,7 +25,7 @@ I do not suggest to use this project to
 
 ### How to try it on Azure:
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Falkwa-msft%2FAzureCommunicationServicesGetStartedApis%2Fdeploy-to-azure%2Fdeploy%2Fazuredeploy.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Falkwa-msft%2FAzureCommunicationServicesGetStartedApis%2Fmain%2Fdeploy%2Fazuredeploy.json)
 
 ### Before you get started:
 You will need
