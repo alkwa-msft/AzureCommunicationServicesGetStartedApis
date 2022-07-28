@@ -30,7 +30,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2021-02-01",
             "name": "[variables('storageAccountName')]",
-            "location": "[parameters('location')]",
+            "location": "[variables('location')]",
             "sku": {
                 "name": "[parameters('storageAccountType')]"
             },
@@ -40,7 +40,7 @@
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2021-02-01",
             "name": "[variables('hostingPlanName')]",
-            "location": "[parameters('location')]",
+            "location": "[variables('location')]",
             "sku": {
                 "name": "Y1",
                 "tier": "Dynamic",
