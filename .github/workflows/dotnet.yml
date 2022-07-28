@@ -1,11 +1,9 @@
-name: .NET
+name: .NET - Add latest build to Github Release
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+  release:
+    types: [created]
+    name: Release  
 
 jobs:
   build:
