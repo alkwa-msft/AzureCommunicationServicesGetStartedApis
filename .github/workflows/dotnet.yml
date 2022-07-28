@@ -24,3 +24,15 @@ jobs:
       run: dotnet build AzureCommunicationServicesGetStartedApis.csproj
     - name: Publish
       run: dotnet publish AzureCommunicationServicesGetStartedApis.csproj
+    - name: Create Release
+      shell: bash
+      run: |
+        release_name=Group-Calling
+        unset CI
+        7z a -tzip -r "AzureCommunicationServicesGetStartedApis.zip" ./bin/Debug/netcoreapp3.1/publish/*
+    - name: Upload Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: "AzureCommunicationServicesGetStartedApis.zip"
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
