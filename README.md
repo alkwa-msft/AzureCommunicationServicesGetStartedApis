@@ -23,6 +23,10 @@ I do not suggest to use this project to
 - As more functionality is provided by server-side SDKs it would be great to have contributions for additional backend functions
 - Would be interesting to have a UI that can detect other app services and apply this function app registration as an API permission to those apps so they can request access tokens to this app service when its deployed in Azure.
 
+### How to try it on Azure:
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Falkwa-msft%2FAzureCommunicationServicesGetStartedApis%2Fdeploy-to-azure%2Fdeploy%2Fazuredeploy.json)
+
 ### Before you get started:
 You will need
 - Azure Function Core Tools
