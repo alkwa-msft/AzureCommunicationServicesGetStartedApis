@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "2aeec34c-357e-4590-8803-f0ac4c7acb25",
+		"name": "AzureCommunicationServicesGetStartedApis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost",
+			"item": [
+				{
+					"name": "/api/Chat-CreateChatThread",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic\": \"test topic\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Chat-CreateChatThread",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Chat-CreateChatThread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Chat-DeleteChatThread",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"threadId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Chat-CreateChatThread",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Chat-CreateChatThread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Chat-getChatThreadProperties",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"threadId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Chat-GetChatThreadProperties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Chat-GetChatThreadProperties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Identity-GetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Identity-GetToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Identity-GetToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Identity-CreateUserAndToken Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-functions-key",
+								"value": "jZ8GIrPqR00KRC2VAelg-FcjhUo7Zd3gcBNKoug3S4WhAzFuJ-iWIQ==",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7071/api/Identity-CreateUserAndToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Identity-CreateUserAndToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Chat-AddParticipant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-functions-key",
+								"value": "jZ8GIrPqR00KRC2VAelg-FcjhUo7Zd3gcBNKoug3S4WhAzFuJ-iWIQ==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acsUserId\": \"\",\r\n    \"threadId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Chat-AddParticipant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Chat-AddParticipant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Chat-RemoveParticipant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-functions-key",
+								"value": "jZ8GIrPqR00KRC2VAelg-FcjhUo7Zd3gcBNKoug3S4WhAzFuJ-iWIQ==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acsUserId\": \"\",\r\n    \"threadId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Chat-RemoveParticipant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Chat-RemoveParticipant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Identity-CreateUserAndToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/Identity-CreateUserAndToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Identity-CreateUserAndToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
