@@ -65,7 +65,17 @@ _Some of the functions may require additional parameters._
 
 ### Deployed on to Azure:
 
-todo
+1. Create a Function App on Azure
+2. Deploy your function app through VSCode
+3. Set up these configuration variables on your function app
+
+todo: link some pages on how to get your resource connection string, endpointUrl and the adminUserId
+
+      "AzureCommunicationServicesResourceConnectionString": "endpoint=<domain>;accesskey=<supertopsecretkey>==",
+      "endpointUrl": "<domain>",
+      "adminUserId": "<user id you created in your azure portal"
+
+_Try creating your own postman functions to hit your deployed service_
 
 ## If you have any additional questions:
 
