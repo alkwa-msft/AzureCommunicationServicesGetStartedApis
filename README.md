@@ -83,22 +83,27 @@ _Try creating your own postman functions to hit your deployed service_
 
 ## How to secure your API (Azure Function app) behind an app service
 
+We want to require authentication to get access to our web app and we want to use that same login process to 
+get access to our APIs.
+
 1. Add authentication to your Function app. (Select Microsft as your provider)
-2. Go into the App registration for the Function app and expose an Api (e.g user_impersonation)
-3. Add authentication to your App service. (Select Microsoft as your provider)
-4. Go into the App registration for the App service and add the exposed API URI to the API Permissions of the App registration (App Service)
-5. 5. Go into the resources view for the azure app service and change the loginParameters to add our API scope
+2. Go into the App registration for the Function app
+3. Expose a scope from your Function app (e.g user_impersonation)
+4. Add authentication to your App service. (Select Microsoft as your provider)
 
-(https://resources.azure.com/)
-/providers/Microsoft.Web/sites/<app service name>/config/authsettingsV2/list
+At this point both of your app service and API are protected but are isolated from one another.
 
-        "login": {
-          "disableWWWAuthenticate": false,
-	  "loginParameters": "scope=openid offline_access profile <exposed api>"
-        },
-*Due to a minor issue we can't request an access token from multiple domains yet.
-** If the access token seems to be failing (e.g expired after 1 hour). Feel free to use
-/.auth/me again to reset the access token
+5. Go into the App registration for the App service and add the exposed API URI to the API Permissions of the App registration (App Service)
+6. Inside of your web app, use msal-browser to request an access token for the target scope from your azure function app.
+
+MSAL leverages the cookies provided by the authentication step to help us make additional requests for new scopes
+(e.g user_impersonation of our API service). When it resolves correctly the audience of the returned access token
+will match the audience of the API service. You can use this access token in the Authentication header for the API requests 
+(e.g "Bearer `<accessToken>`" There is a space between the r and the beginning of the accessToken)
+
+[Example of using msal-browser in an SPA](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-javascript-auth-code "Example of using msal-browser in an SPA")
+
+It is also possible to get an access token for the other service without using MSAL on the client-side but it is definitely not suggested. I can make a write-up if others are interested. This method will effectively have /.auth/me return an access token for a different audience from the app service audience.
 
 ## If you have any additional questions:
 
