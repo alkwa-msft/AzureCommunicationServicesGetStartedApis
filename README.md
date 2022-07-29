@@ -16,7 +16,7 @@ I do not suggest to use this project to
 ## Goal:
 - ✅ Have a common backend to help others get started
 - ✅ Be able to deploy this backend quickly to help others get started
-- ⬜ Add instructions on how people can secure their backend functionality
+- ✅ Add instructions on how people can secure their backend functionality
 
 ## Wish list:
 - Would be cool to output the swagger
@@ -80,6 +80,25 @@ todo: link some pages on how to get your resource connection string, endpointUrl
       "adminUserId": "<user id you created in your azure portal"
 
 _Try creating your own postman functions to hit your deployed service_
+
+## How to secure your API (Azure Function app) behind an app service
+
+1. Add authentication to your Function app. (Select Microsft as your provider)
+2. Go into the App registration for the Function app and expose an Api (e.g user_impersonation)
+3. Add authentication to your App service. (Select Microsoft as your provider)
+4. Go into the App registration for the App service and add the exposed API URI to the API Permissions of the App registration (App Service)
+5. 5. Go into the resources view for the azure app service and change the loginParameters to add our API scope
+
+(https://resources.azure.com/)
+/providers/Microsoft.Web/sites/<app service name>/config/authsettingsV2/list
+
+        "login": {
+          "disableWWWAuthenticate": false,
+	  "loginParameters": "scope=openid offline_access profile <exposed api>"
+        },
+*Due to a minor issue we can't request an access token from multiple domains yet.
+** If the access token seems to be failing (e.g expired after 1 hour). Feel free to use
+/.auth/me again to reset the access token
 
 ## If you have any additional questions:
 
