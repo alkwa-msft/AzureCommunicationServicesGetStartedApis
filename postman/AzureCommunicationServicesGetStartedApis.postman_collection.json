@@ -67,7 +67,7 @@
 					"response": []
 				},
 				{
-					"name": "/api/Chat-getChatThreadProperties",
+					"name": "/api/Chat-GetChatThreadProperties",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -90,6 +90,64 @@
 							"path": [
 								"api",
 								"Chat-GetChatThreadProperties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Chat-GetChatThreads",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Chat-GetChatThreads",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Chat-GetChatThreads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Chat-GetParticipants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"threadId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Chat-GetParticipants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Chat-GetParticipants"
 							]
 						}
 					},
