@@ -39,6 +39,13 @@ namespace AzureCommunicationServicesGetStartedApis
                 return new BadRequestObjectResult("[Chat-AddParticipant] - acsUserId cannot be null or empty");
             }
 
+            string displayName = data?.displayName;
+
+             if (displayName == "" || displayName == null)
+            {
+                return new BadRequestObjectResult("[Chat-AddParticipant] - displayName cannot be null or empty");
+            }
+
             string threadId = data?.threadId;
 
             if (threadId == "" || threadId == null)
@@ -53,7 +60,9 @@ namespace AzureCommunicationServicesGetStartedApis
 
             try
 			{
-                Response addParticipantResponse = await threadClient.AddParticipantAsync(new ChatParticipant(new CommunicationUserIdentifier(acsUserId)));
+                ChatParticipant chatParticipant = new ChatParticipant(new CommunicationUserIdentifier(acsUserId));
+                chatParticipant.DisplayName = displayName;
+                Response addParticipantResponse = await threadClient.AddParticipantAsync(chatParticipant);
                 return new OkObjectResult(addParticipantResponse.Status);
             }
             catch(RequestFailedException ex)

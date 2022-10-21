@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2aeec34c-357e-4590-8803-f0ac4c7acb25",
+		"_postman_id": "9362944d-0fb4-4f39-943d-72bc68722d32",
 		"name": "AzureCommunicationServicesGetStartedApis",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"topic\": \"test topic\"\r\n}",
+							"raw": "{\r\n    \"topic\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -209,14 +209,15 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "x-functions-key",
-								"value": "jZ8GIrPqR00KRC2VAelg-FcjhUo7Zd3gcBNKoug3S4WhAzFuJ-iWIQ==",
-								"type": "text"
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"acsUserId\": \"\",\r\n    \"threadId\": \"\"\r\n}",
+							"raw": "{\r\n    \"displayName\": \"\",\r\n    \"acsUserId\": \"\",\r\n    \"threadId\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
