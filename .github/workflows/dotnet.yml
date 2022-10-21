@@ -25,8 +25,8 @@ jobs:
     - name: copy file
       uses: canastro/copy-file-action@master
       with:
-        source: "local.settings.template.json"
-        target: " ./bin/Debug/netcoreapp3.1/publish/local.settings.json"
+        source: "./local.settings.template.json"
+        target: "./bin/Debug/netcoreapp3.1/publish/local.settings.json"
     - name: Create Release
       shell: bash
       run: |
