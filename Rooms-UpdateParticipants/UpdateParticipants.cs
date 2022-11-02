@@ -10,12 +10,13 @@ using Newtonsoft.Json;
 using Azure.Communication.Rooms;
 using Azure.Communication;
 using System.Collections.Generic;
+using Azure;
 
 namespace ACSUIBackend
 {
 	public static class UpdateParticipant
 	{
-		[FunctionName("Rooms-UpdateParticipant")]
+		[FunctionName("Rooms-UpdateParticipants")]
 		public static async Task<IActionResult> Run(
 			[HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
 			ILogger log)
@@ -36,7 +37,9 @@ namespace ACSUIBackend
 			// wrap this in a try/catch and send a bad code if it fails
 			var response = await client.UpdateParticipantsAsync(roomId, new List<RoomParticipant> { participant });
 
-			return new OkObjectResult(response);
+			Response<CommunicationRoom> getRoomResponse = await client.GetRoomAsync(roomId);
+
+			return new OkObjectResult(getRoomResponse.Value);
 		}
 
 		private static RoleType getRoleFromStr(string role)

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Azure.Communication.Rooms;
 using Azure.Communication;
 using System.Collections.Generic;
+using Azure;
 
 namespace ACSUIBackend
 {
@@ -44,12 +45,11 @@ namespace ACSUIBackend
 
 			// wrap this in a try/catch and send a bad code if it fails
 			var response = await client.AddParticipantsAsync(roomId, new List<RoomParticipant> { participant });
-			response.Content.ToString();
-			var rawJson = await new StreamReader(response.ContentStream).ReadToEndAsync();
-			string test = JsonConvert.SerializeObject(response.Value);
-			
 
-			return new OkObjectResult(test);
+			// wrap this in a try/catch and send a bad code if it fails
+			Response<CommunicationRoom> getRoomResponse = await client.GetRoomAsync(roomId);
+
+			return new OkObjectResult(getRoomResponse.Value);
 		}
 
 		private static RoleType getRoleFromStr(string role)

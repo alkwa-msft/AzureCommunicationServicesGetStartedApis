@@ -178,7 +178,7 @@
 					"response": []
 				},
 				{
-					"name": "/api/Identity-CreateUserAndToken Copy",
+					"name": "/api/Identity-CreateUserAndToken",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -319,6 +319,30 @@
 					"response": []
 				},
 				{
+					"name": "/api/Rooms-UpdateParticipants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    roomId: \"\",\r\n    acsUserId: \"\",\r\n    role: \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-UpdateParticipants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-UpdateParticipants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "/api/Rooms-AddParticipants",
 					"request": {
 						"method": "POST",
@@ -337,6 +361,30 @@
 							"path": [
 								"api",
 								"Rooms-AddParticipants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Rooms-GetParticipants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    roomId: \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-GetParticipants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-GetParticipants"
 							]
 						}
 					},
@@ -381,6 +429,54 @@
 							"path": [
 								"api",
 								"Rooms-CreateRoom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Rooms-GetRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    roomId: \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-GetRoom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-GetRoom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Rooms-UpdateRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    roomId: \"\",\r\n    \"validFrom\": \"\",\r\n    \"validUntil\": \"\",\r\n    roomJoinPolicy: \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-UpdateRoom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-UpdateRoom"
 							]
 						}
 					},

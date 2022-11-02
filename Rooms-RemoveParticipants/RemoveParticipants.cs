@@ -11,6 +11,7 @@ using Azure.Communication.Rooms;
 using Azure.Communication.Rooms.Models;
 using Azure.Communication;
 using System.Collections.Generic;
+using Azure;
 
 namespace ACSUIBackend
 {
@@ -35,7 +36,10 @@ namespace ACSUIBackend
 			// wrap this in a try/catch and send a bad code if it fails
 	        var response = await client.RemoveParticipantsAsync(roomId, new List<CommunicationIdentifier> { identifier });
 
-            return new OkObjectResult(response);
+            // wrap this in a try/catch and send a bad code if it fails
+            Response<CommunicationRoom> getRoomResponse = await client.GetRoomAsync(roomId);
+
+            return new OkObjectResult(getRoomResponse.Value);
         }
     }
 }

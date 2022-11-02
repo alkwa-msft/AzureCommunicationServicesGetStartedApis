@@ -40,9 +40,18 @@ namespace ACSUIBackend
             // if we fail return a bad code
 
             // wrap this in a try/catch and send a bad code if it fails
-            Response<CommunicationRoom> response = await client.UpdateRoomAsync(roomId, validFrom, validUntil, roomJoinPolicy);
+            try
+			{
+                Response<CommunicationRoom> response = await client.UpdateRoomAsync(roomId, validFrom, validUntil, roomJoinPolicy);
+            }catch(Exception e)
+			{
+                Console.WriteLine(e.Message);
+			}
 
-			return new OkObjectResult(response.Value);
+            // wrap this in a try/catch and send a bad code if it fails
+            Response<CommunicationRoom> getRoomResponse = await client.GetRoomAsync(roomId);
+
+            return new OkObjectResult(getRoomResponse.Value);
         }
 
         public static RoomJoinPolicy getRoomJoinPolicyFromStr(string policyStr) {
