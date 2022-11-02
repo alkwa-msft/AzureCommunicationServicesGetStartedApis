@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9362944d-0fb4-4f39-943d-72bc68722d32",
+		"_postman_id": "e38167ff-05f3-4231-ad91-1e11080acd6f",
 		"name": "AzureCommunicationServicesGetStartedApis",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -289,6 +289,98 @@
 							"path": [
 								"api",
 								"Identity-CreateUserAndToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Rooms-RemoveParticipants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    roomId: \"\",\r\n    acsUserId: \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-RemoveParticipants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-RemoveParticipants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Rooms-AddParticipants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    roomId: \"\",\r\n    acsUserId: \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-AddParticipants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-AddParticipants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Rooms-DeleteRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    roomId: \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-DeleteRoom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-DeleteRoom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Rooms-CreateRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7071/api/Rooms-CreateRoom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"Rooms-CreateRoom"
 							]
 						}
 					},
